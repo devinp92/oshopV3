@@ -67,8 +67,7 @@ class Brand extends CoreModel{
      *
      * @return array[Brand]
      */
-    public function findFooterFive()
-    {
+    public function findFooterFive()    {
         $sql = 'SELECT *
                 FROM brand
                 WHERE footer_order > 0

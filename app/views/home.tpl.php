@@ -1,6 +1,3 @@
-<?php
-// dump($viewVars);
-?>
 
 
 <section>

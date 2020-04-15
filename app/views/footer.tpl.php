@@ -148,10 +148,10 @@
     //]]>
 </script>
 <!-- JS -->
-<script src="<?=$viewVars['baseUri']?>/js/jquery.min.js"></script>
-<script src="<?=$viewVars['baseUri']?>/js/popper.min.js"></script>
-<script src="<?=$viewVars['baseUri']?>/js/bootstrap.min.js"></script>
-<script src="<?=$viewVars['baseUri']?>/js/app.js"></script>
+<script src="<?=$viewVars['baseUri']?>/assets/js/jquery.min.js"></script>
+<script src="<?=$viewVars['baseUri']?>/assets/js/popper.min.js"></script>
+<script src="<?=$viewVars['baseUri']?>/assets/js/bootstrap.min.js"></script>
+<script src="<?=$viewVars['baseUri']?>/assets/js/app.js"></script>
 </body>
 
 </html>

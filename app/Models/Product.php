@@ -128,7 +128,6 @@ class Product extends CoreModel{
         return $productsList;
     }
 
-
     public function findAllByBrand($brand_id)
     {
         $sql = 'SELECT * 
@@ -156,6 +155,9 @@ class Product extends CoreModel{
 
         return $productsList;
     }
+
+
+
 
     public function findSingle($id) {
         // requête pour récupérer UN produit

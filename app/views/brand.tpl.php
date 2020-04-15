@@ -49,23 +49,25 @@
 
         <div class="product col-xl-3 col-lg-4 col-sm-6">
           <div class="product-image">
-            <a href="detail.html" class="product-hover-overlay-link">
+            <a href="<?=$router->generate('catalog_product', ['product_id'=> $currentProduct->getId()])?>" class="product-hover-overlay-link">
               <img src="<?=$viewVars['baseUri']?>/<?= $currentProduct->getPicture()?>" alt="product" class="img-fluid">
             </a>
           </div>
           <div class="product-action-buttons">
             <a href="#" class="btn btn-outline-dark btn-product-left"><i class="fa fa-shopping-cart"></i></a>
-            <a href="detail.html" class="btn btn-dark btn-buy"><i class="fa-search fa"></i><span class="btn-buy-label ml-2">Voir</span></a>
+            <a href="<?=$router->generate('catalog_product', ['product_id'=> $currentProduct->getId()])?>" class="btn btn-dark btn-buy"><i class="fa-search fa"></i><span class="btn-buy-label ml-2">Voir</span></a>
           </div>
           <div class="py-2">
             <p class="text-muted text-sm mb-1">Chausson</p>
-            <h3 class="h6 text-uppercase mb-1"><a href="detail.html" class="text-dark"><?= $currentProduct->getName()?></a></h3><span class="text-muted"><?= $currentProduct->getPrice()?>€</span>
+            <h3 class="h6 text-uppercase mb-1"><a href="<?=$router->generate('catalog_product', ['product_id'=> $currentProduct->getId()])?>" class="text-dark"><?= $currentProduct->getName()?></a></h3><span class="text-muted"><?= $currentProduct->getPrice()?>€</span>
           </div>
         </div>
         <?php endforeach ?>
-          <?php }else {
-             echo 'Il n\'y a pas de produit de cette marque' ;
-          } ?>
+          <?php }else {?>
+
+          <h1>Il n'y a pas de produit de cette marque</h1> 
+
+        <?php }   ?>
         <!-- /product-->
         <!-- product-->
         <!-- <div class="product col-xl-3 col-lg-4 col-sm-6">

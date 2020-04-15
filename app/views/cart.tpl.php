@@ -1,4 +1,4 @@
-<section class="hero">
+  <section class="hero">
     <div class="container">
       <!-- Breadcrumbs -->
       <ol class="breadcrumb justify-content-center">

@@ -1,1 +1,8 @@
+import_trello.php
+/vendor/
+<<<<<<< Updated upstream
+
 import-external-repo.sh
+=======
+/app/config.ini
+>>>>>>> Stashed changes
