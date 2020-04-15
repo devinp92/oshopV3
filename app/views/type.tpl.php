@@ -1,5 +1,5 @@
 <?php
-  // dump($viewVars);
+  dump($viewVars);
 ?>
 
 <section class="hero">

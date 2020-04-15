@@ -59,7 +59,7 @@ class CatalogController extends CoreController {
 
 
 
-    public function brand($params) {
+     public function brand($params) {
 
         $productModel = new Product();
         $productByBrand = $productModel->findAllByBrand($params['brand_id']);

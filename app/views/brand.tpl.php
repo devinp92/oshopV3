@@ -41,10 +41,16 @@
       </header>
       <div class="row">
         <!-- product-->
+
+        <?php
+          if (!empty($viewVars['productByBrand'])){
+          foreach ($viewVars['productByBrand'] as $currentProduct):
+        ?>
+
         <div class="product col-xl-3 col-lg-4 col-sm-6">
           <div class="product-image">
             <a href="detail.html" class="product-hover-overlay-link">
-              <img src="<?=$viewVars['baseUri']?>/assets/images/produits/1-kiss_tn.jpg" alt="product" class="img-fluid">
+              <img src="<?=$viewVars['baseUri']?>/<?= $currentProduct->getPicture()?>" alt="product" class="img-fluid">
             </a>
           </div>
           <div class="product-action-buttons">
@@ -53,12 +59,16 @@
           </div>
           <div class="py-2">
             <p class="text-muted text-sm mb-1">Chausson</p>
-            <h3 class="h6 text-uppercase mb-1"><a href="detail.html" class="text-dark">Kissing</a></h3><span class="text-muted">40€</span>
+            <h3 class="h6 text-uppercase mb-1"><a href="detail.html" class="text-dark"><?= $currentProduct->getName()?></a></h3><span class="text-muted"><?= $currentProduct->getPrice()?>€</span>
           </div>
         </div>
+        <?php endforeach ?>
+          <?php }else {
+             echo 'Il n\'y a pas de produit de cette marque' ;
+          } ?>
         <!-- /product-->
         <!-- product-->
-        <div class="product col-xl-3 col-lg-4 col-sm-6">
+        <!-- <div class="product col-xl-3 col-lg-4 col-sm-6">
             <div class="product-image">
               <a href="detail.html" class="product-hover-overlay-link">
                 <img src="<?=$viewVars['baseUri']?>/assets/images/produits/2-rose_tn.jpg" alt="product" class="img-fluid">
@@ -72,10 +82,10 @@
               <p class="text-muted text-sm mb-1">Tong</p>
               <h3 class="h6 text-uppercase mb-1"><a href="detail.html" class="text-dark">Pink lady</a></h3><span class="text-muted">20€</span>
             </div>
-          </div>
+          </div> -->
           <!-- /product-->
           <!-- product-->
-        <div class="product col-xl-3 col-lg-4 col-sm-6">
+        <!-- <div class="product col-xl-3 col-lg-4 col-sm-6">
             <div class="product-image">
               <a href="detail.html" class="product-hover-overlay-link">
                 <img src="<?=$viewVars['baseUri']?>/assets/images/produits/3-panda_tn.jpg" alt="product" class="img-fluid">
@@ -89,10 +99,10 @@
               <p class="text-muted text-sm mb-1">Chausson</p>
               <h3 class="h6 text-uppercase mb-1"><a href="detail.html" class="text-dark">Panda</a></h3><span class="text-muted">50€</span>
             </div>
-          </div>
+          </div> -->
           <!-- /product-->
           <!-- product-->
-        <div class="product col-xl-3 col-lg-4 col-sm-6">
+        <!-- <div class="product col-xl-3 col-lg-4 col-sm-6">
             <div class="product-image">
               <a href="detail.html" class="product-hover-overlay-link">
                 <img src="<?=$viewVars['baseUri']?>/assets/images/produits/20-deadpool_tn.jpg" alt="product" class="img-fluid">
@@ -106,7 +116,7 @@
               <p class="text-muted text-sm mb-1">Pantoufle</p>
               <h3 class="h6 text-uppercase mb-1"><a href="detail.html" class="text-dark">Deadpool</a></h3><span class="text-muted">15€</span>
             </div>
-          </div>
+          </div> -->
           <!-- /product-->
 
       </div>
