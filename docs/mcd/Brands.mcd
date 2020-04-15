@@ -1,0 +1,11 @@
+BRAND: brand name, footer order, created at, updated at
+made, 0N BRAND, 11 PRODUCT
+:
+
+:
+PRODUCT: product name, description, picture, price, rate, created at, updated at
+is a, 0N TYPE, 11 PRODUCT
+
+CATEGORY: category title, subtitle, picture, home order, created at, updated at
+is tagged as, 01 PRODUCT, 0N CATEGORY
+TYPE: type name, footer order, created at, updated at

@@ -1,0 +1,31 @@
+# Activation de la réécriture des URL
+RewriteEngine On
+
+# Ajoute mon dans mon $_SERVER une clé "BASE_URI"
+# ayant pour valeur, la partie "statique" de mon url
+RewriteCond %{REQUEST_URI}::$1 ^(/.+)/(.*)::\2$
+RewriteRule ^(.*) - [E=BASE_URI:%1]
+# Exemple:
+# http://localhost/oclock/excalibur/s5/s05-e01-exo-controllers-views-christopheOclock/home
+# Apache donnera ceci à PHP (que PHP placera dans $_SERVER['BASE_URI']):
+# oclock/excalibur/s5/s05-e01-exo-controllers-views-christopheOclock/
+
+######################################################################
+# Redirige n'importe quelle demande qui n'existe pas vers mon fichier
+# index.php
+######################################################################
+
+# Si on me demande un dossier qui n'existe pas...
+RewriteCond %{REQUEST_FILENAME} !-d
+# Si on me demande un fichier qui n'existe pas...
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Alors j'execute à l place index.php avec le parametre
+# d'url _url=...
+# (où les ... ont pour valeur la ressource demandée)
+RewriteRule ^(.*)$ index.php?_url=/$1 [QSA,L]
+
+# Exemple:
+# monurl/products n'existe pas
+# du coup apache execute à la place: index.php?_url=products
+# C'est ce qu'on appel l'url rewriting \o/
